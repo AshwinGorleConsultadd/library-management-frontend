@@ -10,6 +10,7 @@ import VerifyEmailPage from "./components/page/auth-pages/verify-email-page";
 import SignupPage from "./components/page/auth-pages/signup-page";
 import DashboardPage from "./components/page/dashboard-page";
 import BookPage from "./components/page/book-page/book-page";
+import MemberPage from "./components/page/member-page/member-page";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/book",
         element: React.createElement(BookPage),
+      },
+      {
+        path: "/member",
+        element: React.createElement(MemberPage),
       },
     ],
   },

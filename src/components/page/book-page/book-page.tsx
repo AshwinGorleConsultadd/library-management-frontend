@@ -14,8 +14,9 @@ import { Card } from "@/components/ui/card"
 import CreateBookDialog from "./create-book-dialog"
 import useGetBooks from "@/hooks/book/useGetBooks"
 import Spinner from "@/components/spinner"
-import { Edit2 } from "lucide-react"
+import { Delete, Edit2 } from "lucide-react"
 import UpdateBookDialog from "./update-book-dialog"
+import DeleteBookDialog from "./delete-book-dialog"
 
 interface Book {
   title: string;
@@ -31,15 +32,24 @@ export default function BookPage() {
   const {data,loading} = useGetBooks();
   const [book, setBook] = useState({});
   const [open, setOpen] = useState(false);
+  const [openDeleteDiaglog, setOpenDeleteDialog] = useState(false);
+  const [deleteBook , setDeleteBook] = useState({});
 
   const handleUpdateBook = (book)=>{
     setBook(book);
     setOpen(true);
   }
+   
+  const handleDeleteBook = (book) => {
+    setDeleteBook(book);
+    setOpenDeleteDialog(true);
+  }
+
    return (
     <div className="p-6 max-w-6xl mx-auto">
       <CreateBookDialog/>
       <UpdateBookDialog book={book} open={open} setOpen={setOpen} />
+      <DeleteBookDialog book={deleteBook} open={openDeleteDiaglog} onClose={setOpenDeleteDialog} />
       <Card className="p-4">
         { loading ? <Spinner/> :
         <table className="w-full table-auto text-sm text-left">
@@ -51,7 +61,8 @@ export default function BookPage() {
               <th className="p-2">Total</th>
               <th className="p-2">Available</th>
               <th className="p-2">Borrowed</th>
-              <th className="p-2" >Action</th>
+              <th className="p-2" >Edit</th>
+              <th className="p-2" >Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -64,6 +75,7 @@ export default function BookPage() {
                 <td className="p-2">{book.available_copies}</td>
                 <td className="p-2">{book.borrowed_copies}</td>
                 <td className="p-2"><Button variant="outline" onClick={()=>handleUpdateBook(book)}><Edit2 size={18}/></Button> </td>
+                <td className="p-2"><Button variant="outline" onClick={()=>handleDeleteBook(book)}><Delete size={18}/></Button> </td>
               </tr>
             ))}
           </tbody>

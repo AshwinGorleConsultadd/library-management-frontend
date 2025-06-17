@@ -33,7 +33,7 @@ export const getBooksService = () => {
       const response = await axiosClient.get("/books")
       console.log("get-books-response :", response);
       dispath(bookActions.getBooksSuccess(response.data))
-      toast(`Books fetched sucessfully!`)
+      
     } catch (error) {
       console.log("get-books-error :", error);
       dispath(bookActions.getBooksError(error))
@@ -69,3 +69,26 @@ export const updateBookService = (data: {
   };
 };
 
+
+
+
+export const deleteBookService = (id: number) => {
+  return async (dispatch: any) => {
+    try {
+      console.log("delete-book-request:", id);
+      dispatch(bookActions.deleteBookRequest());
+
+      await axiosClient.delete(`/books/${id}`);
+
+      dispatch(bookActions.deleteBookSuccess(id));
+      
+    } catch (error: any) {
+      console.error("delete-book-error:", error);
+      dispatch(bookActions.deleteBookError(error));
+      toast.error(
+        error?.response?.data?.message ||
+          "Something went wrong while deleting the book!"
+      );
+    }
+  };
+};

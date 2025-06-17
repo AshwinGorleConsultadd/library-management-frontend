@@ -4,15 +4,16 @@ import weatherSlice from './sclices/weatherSlice'
 import suggestionsSlice from './sclices/suggestionsSlice'
 import authSlice from './sclices/authSlice'
 import bookSlice from './sclices/bookSlice'
+import memberSlice from './sclices/memberSlice'
 // ...
 
 export const store = configureStore({
   reducer: {
-    counter: counterSlice,
-    weather: weatherSlice,
     suggestions : suggestionsSlice,
     auth : authSlice,
-    book : bookSlice
+    book : bookSlice,
+    member : memberSlice
+
   },
 })
 

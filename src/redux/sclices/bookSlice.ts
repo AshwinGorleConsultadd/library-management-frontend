@@ -18,6 +18,11 @@ const bookSlice = createSlice({
       data: null,
       error: null,
     },
+    deleteBook: {
+      status: "idle",
+      data: null,
+      error: null,
+    },
   },
   reducers: {
     createBookRequest: (state) => {
@@ -74,6 +79,29 @@ const bookSlice = createSlice({
     updateBookError: (state, action) => {
       state.updateBook.status = "failed";
       state.updateBook.error = action.payload;
+    },
+
+    //deleting the book
+    deleteBookRequest: (state) => {
+      state.deleteBook.status = "pending";
+      state.deleteBook.data = null;
+      state.deleteBook.error = null;
+    },
+    deleteBookSuccess: (state, action) => {
+      state.deleteBook.status = "success";
+      state.deleteBook.data = action.payload;
+      state.getBooks.data = state.getBooks.data.filter(
+        (book: any) => book.id !== action.payload
+      );
+    },
+    deleteBookError: (state, action) => {
+      state.deleteBook.status = "failed";
+      state.deleteBook.error = action.payload;
+    },
+    clearDeleteBook: (state) => {
+      state.deleteBook.status = "idle";
+      state.deleteBook.data = null;
+      state.deleteBook.error = null;
     },
   },
 });
