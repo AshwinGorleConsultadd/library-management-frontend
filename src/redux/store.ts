@@ -3,6 +3,7 @@ import counterSlice from '../slices/counterSlice'
 import weatherSlice from './sclices/weatherSlice'
 import suggestionsSlice from './sclices/suggestionsSlice'
 import authSlice from './sclices/authSlice'
+import bookSlice from './sclices/bookSlice'
 // ...
 
 export const store = configureStore({
@@ -10,7 +11,8 @@ export const store = configureStore({
     counter: counterSlice,
     weather: weatherSlice,
     suggestions : suggestionsSlice,
-    auth : authSlice
+    auth : authSlice,
+    book : bookSlice
   },
 })
 

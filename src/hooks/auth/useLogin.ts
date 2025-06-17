@@ -19,7 +19,7 @@ const useLogin = () => {
       setLoading(true);
     }else if(status == 'success'){
         setLoading(false);
-        navigate("/home")
+        navigate("/")
     } else {
       setLoading(false);
     }
