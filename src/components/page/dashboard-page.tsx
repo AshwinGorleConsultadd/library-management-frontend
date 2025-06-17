@@ -1,6 +1,7 @@
+import IssueReturnPage from "./issue-page/issue-book-page"
 
 const DashboardPage = ()=>{
-    return <div>Dashboard</div>
+    return <IssueReturnPage/>
 }
 
 export default DashboardPage

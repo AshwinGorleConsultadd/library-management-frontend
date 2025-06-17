@@ -24,7 +24,7 @@ const useCreateBook = () => {
   useEffect(() => {
     if (status == "pending") {
       setLoading(true);
-    } else {
+    }else {
       setLoading(false);
     }
   }, [dispatch, status]);

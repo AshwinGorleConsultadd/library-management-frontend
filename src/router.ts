@@ -11,6 +11,7 @@ import SignupPage from "./components/page/auth-pages/signup-page";
 import DashboardPage from "./components/page/dashboard-page";
 import BookPage from "./components/page/book-page/book-page";
 import MemberPage from "./components/page/member-page/member-page";
+import ReturnBookCard from "./components/page/issue-page/return-book-card";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/member",
         element: React.createElement(MemberPage),
+      },
+      {
+        path: "/borrow_history",
+        element: React.createElement(ReturnBookCard),
       },
     ],
   },

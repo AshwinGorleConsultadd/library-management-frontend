@@ -5,6 +5,7 @@ import suggestionsSlice from './sclices/suggestionsSlice'
 import authSlice from './sclices/authSlice'
 import bookSlice from './sclices/bookSlice'
 import memberSlice from './sclices/memberSlice'
+import issueReturnSllice from './sclices/issueReturnSlice'
 // ...
 
 export const store = configureStore({
@@ -12,7 +13,8 @@ export const store = configureStore({
     suggestions : suggestionsSlice,
     auth : authSlice,
     book : bookSlice,
-    member : memberSlice
+    member : memberSlice,
+    issueReturn : issueReturnSllice
 
   },
 })

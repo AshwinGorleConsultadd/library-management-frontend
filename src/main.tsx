@@ -8,6 +8,7 @@ import { store } from "./redux/store";
 import { RouterProvider } from "react-router";
 import router from "./router.js";
 import { ToastContainer, toast } from 'react-toastify';
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
