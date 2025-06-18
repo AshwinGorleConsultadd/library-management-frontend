@@ -65,7 +65,8 @@ Admin can issue books to the members of library form here. this comes up with al
 The pannel shows the book allocation history like which book is alloted to which member when it is retured etc.
 also comes up with date filter, status filter and search for the specific record
 
-<img width="1437" alt="Screenshot 2025-06-18 at 2 34 25 PM" src="https://github.com/user-attachments/assets/33354838-0e80-4643-85a3-61c3d200cd0e" />
+<img width="1431" alt="Screenshot 2025-06-18 at 2 34 51 PM" src="https://github.com/user-attachments/assets/d748921b-6ce3-499d-989e-ebf109709f38" />
+
 
 ## 3. Book Panel
 Provides features to maintain book : create, update, search and delete books. (allong with basic validations)
