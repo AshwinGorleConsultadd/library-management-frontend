@@ -29,7 +29,7 @@ The frontend is fully integrated with the FastAPI backend using REST APIs and of
 
 Clone the Repository:
 
-    fit clone https://github.com/AshwinGorleConsultadd/library-management-frontend.git
+    git clone https://github.com/AshwinGorleConsultadd/library-management-frontend.git
 
 If you are using **pnpm** (recommended):
 
