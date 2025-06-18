@@ -27,6 +27,10 @@ The frontend is fully integrated with the FastAPI backend using REST APIs and of
 
 ### Install Dependencies
 
+Clone the Repository:
+
+    fit clone https://github.com/AshwinGorleConsultadd/library-management-frontend.git
+
 If you are using **pnpm** (recommended):
 
     pnpm install
