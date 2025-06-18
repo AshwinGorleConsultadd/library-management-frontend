@@ -31,12 +31,7 @@ const formSchema = z.object({
   borrowed_copies: z.coerce
     .number()
     .min(0, { message: "Cannot be negative" })
-    .refine((val, ctx) => {
-      const total = ctx?.parent?.total_copies || 0
-      return val <= total
-    }, {
-      message: "Borrowed copies must not exceed total copies"
-    }),
+    
 })
 
 const CreateBookDialog = () => {
